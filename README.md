@@ -1,3 +1,14 @@
+# Drizzle
+
+This project uses [Drizzle-orm](https://github.com/drizzle-team/drizzle-orm) instead of prisma.
+
+The db:push script in the package.json will create a migration and migrate the schema.
+
+NextAuth will work with this project using the twitch socail login.
+
+I also made a simple onboard flow.
+
+
 # Create T3 App
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
