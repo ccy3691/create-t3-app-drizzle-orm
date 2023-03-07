@@ -56,7 +56,6 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: DrizzleSqliteAdapter(db),
   theme: { colorScheme: "dark" },
-  pages: { newUser: "/onboarding" },
   providers: [
     // DiscordProvider({
     //   clientId: env.DISCORD_CLIENT_ID,
