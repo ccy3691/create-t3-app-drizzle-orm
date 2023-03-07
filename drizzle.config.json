@@ -1,0 +1,4 @@
+{
+  "out": "./migrations-folder",
+  "schema": "./src/db/schema.ts"
+}
