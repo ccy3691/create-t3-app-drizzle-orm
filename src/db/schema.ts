@@ -79,5 +79,5 @@ export const Account = sqliteTable(
   })
 );
 
-const sqlite = new Database("./src/db/sqllite.db");
+const sqlite = new Database("./src/db/sqlite.db");
 export const db = drizzle(sqlite);

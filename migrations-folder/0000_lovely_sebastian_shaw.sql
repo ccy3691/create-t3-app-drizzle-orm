@@ -1,17 +1,3 @@
-CREATE TABLE User (
-	`id` text PRIMARY KEY NOT NULL,
-	`name` text,
-	`email` text,
-	`expires` integer,
-	`image` text
-);
-
-CREATE TABLE VerificationToken (
-	`identifier` text,
-	`token` text NOT NULL,
-	`expires` integer NOT NULL
-);
-
 CREATE TABLE Account (
 	`id` text PRIMARY KEY NOT NULL,
 	`userId` text NOT NULL,
@@ -36,7 +22,26 @@ CREATE TABLE Session (
 	FOREIGN KEY (`userId`) REFERENCES User(`id`)
 );
 
-CREATE UNIQUE INDEX emailIdx ON User (`email`);
-CREATE UNIQUE INDEX tokenIdx ON VerificationToken (`identifier`,`token`);
+CREATE TABLE User (
+	`id` text PRIMARY KEY NOT NULL,
+	`name` text,
+	`email` text NOT NULL,
+	`expires` integer,
+	`image` text,
+	`role` text,
+	`isOnboarded` integer DEFAULT 0,
+	`onboardingStep` integer DEFAULT 1,
+	`nickname` text,
+	`hasAgreedToToS` integer DEFAULT 0
+);
+
+CREATE TABLE VerificationToken (
+	`identifier` text NOT NULL,
+	`token` text NOT NULL,
+	`expires` integer NOT NULL
+);
+
 CREATE UNIQUE INDEX providerIdx ON Account (`provider`,`providerAccountId`);
 CREATE UNIQUE INDEX sessionTokenIdx ON Session (`sessionToken`);
+CREATE UNIQUE INDEX emailIdx ON User (`email`);
+CREATE UNIQUE INDEX tokenIdx ON VerificationToken (`identifier`,`token`);
