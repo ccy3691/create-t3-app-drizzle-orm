@@ -4,9 +4,11 @@ This project uses [Drizzle-orm](https://github.com/drizzle-team/drizzle-orm) ins
 
 The db:push script in the package.json will create a migration and migrate the schema.
 
-NextAuth will work with this project using the twitch socail login.
+NextAuth will work with this project using the twitch social login.
 
 I also made a simple onboard flow.
+
+There are still outstanding issues with this, just threw it together quickly as a fun project.
 
 
 # Create T3 App
