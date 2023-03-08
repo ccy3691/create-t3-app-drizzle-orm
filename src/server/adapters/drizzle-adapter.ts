@@ -7,7 +7,9 @@ import { randomUUID } from "crypto";
 export function DrizzleSqliteAdapter(d: BetterSQLite3Database): Adapter {
   return {
     createUser: (data) => {
+      // needed due to drizzle-orm bug, this has been fixed in the beta version
       data.emailVerified = new Date();
+      
       return d
         .insert(User)
         .values({ id: randomUUID(), ...data })
