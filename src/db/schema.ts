@@ -40,7 +40,7 @@ export const User = sqliteTable(
     id: text("id").primaryKey().notNull(),
     name: text("name"),
     email: text("email").notNull(),
-    emailVerified: integer("expires", { mode: "timestamp" }),
+    emailVerified: integer("emailVerified", { mode: "timestamp" }),
     image: text("image"),
     role: text("role"),
     isOnboarded: integer("isOnboarded").default(0),
